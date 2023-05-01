@@ -1,47 +1,47 @@
 --[[
 
 =====================================================================
-==================== read this before continuing ====================
+==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
 
-kickstart.nvim is *not* a distribution.
+Kickstart.nvim is *not* a distribution.
 
-kickstart.nvim is a template for your own configuration.
-  the goal is that you can read every line of code, top-to-bottom, and understand
+Kickstart.nvim is a template for your own configuration.
+  The goal is that you can read every line of code, top-to-bottom, and understand
   what your configuration is doing.
 
-  once you've done that, you should start exploring, configuring and tinkering to
-  explore neovim!
+  Once you've done that, you should start exploring, configuring and tinkering to
+  explore Neovim!
 
-  if you don't know anything about lua, i recommend taking some time to read through
-  a guide. one possible example:
+  If you don't know anything about Lua, I recommend taking some time to read through
+  a guide. One possible example:
   - https://learnxinyminutes.com/docs/lua/
 
-  and then you can explore or search through `:help lua-guide`
+  And then you can explore or search through `:help lua-guide`
 
 
-kickstart guide:
+Kickstart Guide:
 
-i have left several `:help x` comments throughout the init.lua
-you should run that command and read that help section for more information.
+I have left several `:help X` comments throughout the init.lua
+You should run that command and read that help section for more information.
 
-in addition, i have some `note:` items throughout the file.
-these are for you, the reader to help understand what is happening. feel free to delete
+In addition, I have some `NOTE:` items throughout the file.
+These are for you, the reader to help understand what is happening. Feel free to delete
 them once you know what you're doing, but they should serve as a guide for when you
 are first encountering a few different constructs in your nvim config.
 
-i hope you enjoy your neovim journey,
-- tj
+I hope you enjoy your Neovim journey,
+- TJ
 
-p.s. you can delete this when you're done too. it's your config now :)
+P.S. You can delete this when you're done too. It's your config now :)
 --]]
--- set <space> as the leader key
--- see `:help mapleader`
---  note: must happen before plugins are required (otherwise wrong leader will be used)
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- install package manager
+-- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -57,59 +57,53 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- note: here is where you install your plugins.
---  you can configure plugins using the `config` key.
+-- NOTE: Here is where you install your plugins.
+--  You can configure plugins using the `config` key.
 --
---  you can also configure plugins after the setup call,
+--  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- note: first, some plugins that don't require any configuration
+  -- NOTE: First, some plugins that don't require any configuration
 
-  -- git related plugins
+  -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- detect tabstop and shiftwidth automatically
+  -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- note: this is where your plugins related to lsp can be installed.
-  --  the configuration is done below. search for lspconfig to find it below.
+  -- NOTE: This is where your plugins related to LSP can be installed.
+  --  The configuration is done below. Search for lspconfig to find it below.
   {
-    -- lsp configuration & plugins
+    -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- automatically install lsps to stdpath for neovim
+      -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-      -- use for formatting
-      'mhartington/formatter.nvim',
-      -- use for dap
-      'mfussenegger/nvim-dap',
-      -- use for linting
-      'mfussenegger/nvim-lint',
 
-      -- useful status updates for lsp
-      -- note: `opts = {}` is the same as calling `require('fidget').setup({})`
+      -- Useful status updates for LSP
+      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim',       opts = {} },
 
-      -- additional lua configuration, makes nvim stuff amazing!
+      -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
   },
 
   {
-    -- autocompletion
+    -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'l3mon4d3/luasnip', 'saadparwaiz1/cmp_luasnip' },
+    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
 
-  -- useful plugin to show you pending keybinds.
+  -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',          opts = {} },
   {
-    -- adds git releated signs to the gutter, as well as utilities for managing changes
+    -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      -- see `:help gitsigns.txt`
+      -- See `:help gitsigns.txt`
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -121,13 +115,11 @@ require('lazy').setup({
   },
 
   {
-    -- theme inspired by atom
+    -- Theme inspired by Atom
     'navarasu/onedark.nvim',
-    -- 'flazz/vim-colorschemes',		-- extra colorschemes
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'onedark'
-      -- vim.cmd.colorscheme('solarized8_dark')
     end,
   },
 
@@ -183,7 +175,7 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     -- if you  get better internet change this to :tsupdate
-    build = ":tsupdatesync",
+    build = ":TSUpdateSync",
   },
 
   -- note: next step on your neovim journey: add/configure additional "plugins" for kickstart
@@ -201,18 +193,6 @@ require('lazy').setup({
   --    an additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
   { import = 'custom.plugins' },
-
-  -- automatically create directories
-  'dockyard/vim-easydir',
-
-  -- detect file type from shebang lines
-  'vitalk/vim-shebang',
-
-  -- vim surround - say no more...
-  'tpope/vim-surround',
-
-  -- restore the cursor position when it counts
-  'farmergreg/vim-lastplace',
 }, {})
 
 -- [[ setting options ]]
