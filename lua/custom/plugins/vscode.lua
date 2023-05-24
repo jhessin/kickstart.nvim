@@ -14,10 +14,9 @@ end)
 
 -- VSCode specific bindings {{{
 if vim.g.vscode then
-  vim.keymap.set('n', 'zM',
-    function()
-      vim.call('VSCodeNotify', 'editor.foldAll')
-    end)
+  vim.keymap.set('n', 'zM', function()
+    vim.call('VSCodeNotify', 'editor.foldAll')
+  end)
   vim.keymap.set('n', 'zR', function()
     vim.call('VSCodeNotify', 'editor.unfoldAll')
   end)
@@ -36,13 +35,10 @@ if vim.g.vscode then
   vim.keymap.set('n', 'za', function()
     vim.call('VSCodeNotify', 'editor.toggleFold')
   end)
-end
-
-if vim.g.vscode then
-  vim.keymap.set({ 'n', 'v' }, 'j', function()
+  vim.keymap.set('', 'j', function()
     vim.call('VSCodeNotify', 'cursorDown')
   end)
-  vim.keymap.set({ 'n', 'v' }, 'k', function()
+  vim.keymap.set('', 'k', function()
     vim.call('VSCodeNotify', 'cursorUp')
   end)
 end
