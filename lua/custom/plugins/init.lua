@@ -16,4 +16,8 @@ return {
 
   -- automatically close tags
   'jiangmiao/auto-pairs',
+
+  -- autohotkey support
+  'mmikeww/autohotkey.vim',
+  'huleiak47/vim-AHKcomplete'
 }
