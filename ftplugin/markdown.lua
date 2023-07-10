@@ -8,6 +8,7 @@ vim.o.textwidth = 80
 
 vim.api.nvim_create_user_command('Job', 'normal ?##<CR>A - submitted - closed<ESC>', {})
 vim.api.nvim_create_user_command('Rename', 'normal IF_<ESC>pa_<ESC>A - *<ESC>', {})
+vim.api.nvim_create_user_command('InitJob', 'normal I## <ESC>^eea<CR><ESC>VS`jjo<ESC>', {})
 -- vim.api.nvim_create_user_command('JD', function()
 --   vim.cmd("normal ?##<CR>A - submitted - closed<ESC>")
 -- end, {})
