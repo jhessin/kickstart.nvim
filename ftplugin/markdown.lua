@@ -9,10 +9,20 @@ local function setup()
   -- vim.cmd("normal ?##<CR>A - submitted - closed<ESC>")
 end
 
+local function setupMaps()
+  vim.cmd("echo 'It Works!'")
+  vim.cmd("cd ~/Documents/work-files")
+  vim.cmd("split comments.txt")
+  vim.cmd("vsplit INDY-notes.md")
+  --   This isn't working for some reason
+  -- vim.cmd("normal ?##<CR>A - submitted - closed<ESC>")
+end
+
 vim.api.nvim_create_user_command('Job', 'normal ?##<CR>A - submitted - closed<ESC>', {})
 vim.api.nvim_create_user_command('Rename', 'normal IF_<ESC>pa_<ESC>A - *<ESC>', {})
 vim.api.nvim_create_user_command('InitJob', 'normal I## <ESC>^eea<CR><ESC>VS`jjo<ESC>', {})
 vim.api.nvim_create_user_command('Setup', function() setup() end, {})
+vim.api.nvim_create_user_command('SetupMaps', function() setupMaps() end, {})
 -- vim.api.nvim_create_user_command('JD', function()
 --   vim.cmd("normal ?##<CR>A - submitted - closed<ESC>")
 -- end, {})
