@@ -12,7 +12,6 @@ end
 local function setupMaps()
   vim.cmd("echo 'It Works!'")
   vim.cmd("cd ~/Documents/work-files")
-  vim.cmd("split comments.txt")
   vim.cmd("vsplit INDY-notes.md")
   --   This isn't working for some reason
   -- vim.cmd("normal ?##<CR>A - submitted - closed<ESC>")
