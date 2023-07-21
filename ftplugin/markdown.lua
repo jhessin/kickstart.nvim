@@ -5,6 +5,7 @@ local function setup()
   vim.cmd("cd ~/Documents/work-files")
   vim.cmd("split comments.txt")
   vim.cmd("vsplit port-pkg-notes.md")
+  vim.cmd("split DWDM_Channels.txt")
 end
 
 local function setupMaps()
