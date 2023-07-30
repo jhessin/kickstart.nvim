@@ -19,5 +19,8 @@ return {
 
   -- autohotkey support
   'mmikeww/autohotkey.vim',
-  'huleiak47/vim-AHKcomplete'
+  'huleiak47/vim-AHKcomplete',
+
+  -- vim-pipe
+  'krisajenkins/vim-pipe',
 }
