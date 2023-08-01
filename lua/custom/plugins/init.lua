@@ -23,4 +23,7 @@ return {
 
   -- vim-pipe
   'krisajenkins/vim-pipe',
+
+  -- path completion
+  'FelipeLema/cmp-async-path',
 }
