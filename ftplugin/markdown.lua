@@ -1,7 +1,6 @@
 vim.o.textwidth = 80
 
 local function setup()
-  vim.cmd("echo 'It Works!'")
   vim.cmd("cd ~/Documents/work-files")
   vim.cmd("split comments.txt")
   vim.cmd("vsplit port-pkg-notes.md")
@@ -9,10 +8,14 @@ local function setup()
 end
 
 local function setupMaps()
-  vim.cmd("echo 'It Works!'")
   vim.cmd("cd ~/Documents/work-files")
   vim.cmd("split INDY-notes.md")
   vim.cmd("vsplit Maps/show_footage.bc")
+end
+
+local function setupSnet()
+  vim.cmd("cd ~/Documents/work-files")
+  vim.cmd("split snet-notes.md")
 end
 
 local function measure()
