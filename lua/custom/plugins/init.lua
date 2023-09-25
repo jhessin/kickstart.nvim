@@ -26,4 +26,7 @@ return {
 
   -- path completion
   'FelipeLema/cmp-async-path',
+
+  -- kivy syntax
+  'farfanoide/vim-kivy',
 }
