@@ -2,20 +2,14 @@ vim.o.textwidth = 80
 
 local function setup()
   vim.cmd("cd ~/Documents/work-files")
-  vim.cmd("split comments.txt")
-  vim.cmd("vsplit port-pkg-notes.md")
-  vim.cmd("split DWDM_Channels.txt")
+  vim.cmd("split Preterms/comments.txt")
+  vim.cmd("vsplit Preterms/pretermNotes.md")
+  vim.cmd("split Preterms/DWDM_Channels.txt")
 end
 
-local function setupMaps()
+local function setupAutoCad()
   vim.cmd("cd ~/Documents/work-files")
-  vim.cmd("split INDY-notes.md")
-  vim.cmd("vsplit Maps/show_footage.bc")
-end
-
-local function setupSnet()
-  vim.cmd("cd ~/Documents/work-files")
-  vim.cmd("split snet-notes.md")
+  vim.cmd("split AutoCad/notes.md")
 end
 
 local function measure()
@@ -37,8 +31,8 @@ end
 
 vim.api.nvim_create_user_command('Job', 'normal ?##<CR>A - submitted - closed<ESC>', {})
 vim.api.nvim_create_user_command('Rename', 'normal IF_<ESC>pa_<ESC>A - *<ESC>', {})
-vim.api.nvim_create_user_command('InitJob', function(opts) initJob(opts.fargs[1]) end, { nargs = 1})
-vim.api.nvim_create_user_command('InitMap', function(opts) initMap(opts.fargs[1]) end, { nargs = 1})
+vim.api.nvim_create_user_command('InitJob', function(opts) initJob(opts.fargs[1]) end, { nargs = 1 })
+vim.api.nvim_create_user_command('InitMap', function(opts) initMap(opts.fargs[1]) end, { nargs = 1 })
 vim.api.nvim_create_user_command('Setup', function() setup() end, {})
-vim.api.nvim_create_user_command('SetupMaps', function() setupMaps() end, {})
+vim.api.nvim_create_user_command('SetupAutoCad', function() setupAutoCad() end, {})
 vim.api.nvim_create_user_command('Measure', function() measure() end, {})
