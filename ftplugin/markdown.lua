@@ -9,7 +9,7 @@ end
 
 local function setupAutoCad()
   vim.cmd("cd ~/Documents/work-files")
-  vim.cmd("split AutoCad/notes.txt")
+  vim.cmd("split AutoCad/notes.md")
 end
 
 local function measure()
@@ -34,5 +34,5 @@ vim.api.nvim_create_user_command('Rename', 'normal IF_<ESC>pa_<ESC>A - *<ESC>', 
 vim.api.nvim_create_user_command('InitJob', function(opts) initJob(opts.fargs[1]) end, { nargs = 1 })
 vim.api.nvim_create_user_command('InitMap', function(opts) initMap(opts.fargs[1]) end, { nargs = 1 })
 vim.api.nvim_create_user_command('Setup', function() setup() end, {})
-vim.api.nvim_create_user_command('setupAutoCad', function() setupAutoCad() end, {})
+vim.api.nvim_create_user_command('SetupAutoCad', function() setupAutoCad() end, {})
 vim.api.nvim_create_user_command('Measure', function() measure() end, {})
