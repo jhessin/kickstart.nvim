@@ -3,9 +3,11 @@ vim.o.textwidth = 80
 local function setup()
   vim.cmd("cd ~/Documents/work-files")
   vim.cmd("split Preterms/comments.txt")
-  vim.cmd("resize 20")
   vim.cmd("vsplit Preterms/pretermNotes.md")
   vim.cmd("split Preterms/DWDM_Channels.txt")
+  vim.cmd("3resize 15")
+  vim.cmd("2resize 10")
+  vim.cmd("1resize 5")
 end
 
 local function setupAutoCad()
