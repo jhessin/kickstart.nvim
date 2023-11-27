@@ -2,7 +2,7 @@ vim.o.textwidth = 80
 
 local function setup()
   vim.cmd("cd ~/Documents/work-files")
-  vim.cmd("split Preterms/comments.txt")
+  vim.cmd("split Preterms/comments.md")
   vim.cmd("vsplit Preterms/pretermNotes.md")
   vim.cmd("split Preterms/DWDM_Channels.txt")
   vim.cmd("3resize 15")
