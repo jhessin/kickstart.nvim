@@ -41,6 +41,9 @@ if vim.g.vscode then
   vim.keymap.set('', 'k', function()
     vim.call('VSCodeNotify', 'cursorUp')
   end)
+  vim.keymap.set('n', ',r', function()
+    vim.call('VSCodeNotify', 'tasks.runtask')
+  end)
 end
 -- }}}
 
