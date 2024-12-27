@@ -11,6 +11,11 @@ local function setupCharter()
   vim.cmd("1resize 5")
 end
 
+local function setup()
+  vim.cmd("only")
+  vim.cmd("cd ~/repos/work-files")
+end
+
 local function setupPNI()
   vim.cmd("only")
   vim.cmd("cd ~/repos/work-files")
@@ -40,4 +45,5 @@ vim.api.nvim_create_user_command('InitJob', function(opts) initJob() end, {})
 vim.api.nvim_create_user_command('InitJobs', function(opts) initJobs(opts.fargs[1]) end, { nargs = 1 })
 vim.api.nvim_create_user_command('InitMap', function(opts) initMap(opts.fargs[1]) end, { nargs = 1 })
 vim.api.nvim_create_user_command('SetupCharter', function() setupCharter() end, {})
+vim.api.nvim_create_user_command('Setup', function() setup() end, {})
 vim.api.nvim_create_user_command('SetupPNI', function() setupPNI() end, {})
