@@ -41,7 +41,8 @@ end
 
 vim.api.nvim_create_user_command('CJ', 'normal ?##<CR>A - submitted - closed<ESC>', {})
 -- vim.api.nvim_create_user_command('OJ', 'normal ?##<CR>$4bhd$<ESC>', {})
-vim.api.nvim_create_user_command('OJ', 'normal ?submitted - closed<CR>$4bhd$<ESC>', {})
+vim.api.nvim_create_user_command('OJ', 'normal ?##<CR>$4bhd$<ESC>', {})
+vim.api.nvim_create_user_command('HJ', 'normal ?##<CR>A - HOLD - waiting<ESC>', {})
 vim.api.nvim_create_user_command('Rename', 'normal IF_<ESC>pa_<ESC>A - *<ESC>', {})
 vim.api.nvim_create_user_command('InitJob', function(opts) initJob() end, {})
 vim.api.nvim_create_user_command('InitJobs', function(opts) initJobs(opts.fargs[1]) end, { nargs = 1 })
