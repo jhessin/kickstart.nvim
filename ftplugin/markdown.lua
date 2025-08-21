@@ -16,6 +16,10 @@ local function setup()
   vim.cmd("cd ~/repos/work-files")
 end
 
+function py()
+  vim.cmd("sp term://py")
+end
+
 local function setupPNI()
   vim.cmd("only")
   vim.cmd("cd ~/repos/work-files")
@@ -39,6 +43,7 @@ local function initMap(count)
   end
 end
 
+vim.api.nvim_create_user_command('Py', function(opts) py() end, {})
 vim.api.nvim_create_user_command('CJ', 'normal ?##<CR>A - submitted - closed<ESC>', {})
 -- vim.api.nvim_create_user_command('OJ', 'normal ?##<CR>$4bhd$<ESC>', {})
 vim.api.nvim_create_user_command('OJ', 'normal ?##<CR>$4bhd$<ESC>', {})

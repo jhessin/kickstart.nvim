@@ -246,6 +246,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ basic keymaps ]]
+--
+-- keymaps for the terminal
+vim.keymap.set('t', '<ESC>', '<C-\\><C-N>', { silent = true })
 
 -- keymaps for better default experience
 -- see `:help vim.keymap.set()`
