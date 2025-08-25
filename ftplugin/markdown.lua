@@ -17,7 +17,7 @@ local function setup()
 end
 
 function py()
-  vim.cmd("sp term://py")
+  vim.cmd("sp term://ipython")
 end
 
 local function setupPNI()

@@ -216,6 +216,8 @@ vim.wo.number = true
 -- enable mouse mode
 vim.o.mouse = 'nv'
 
+vim.o.list = true
+
 -- sync clipboard between os and neovim.
 --  remove this option if you want your os clipboard to remain independent.
 --  see `:help 'clipboard'`
