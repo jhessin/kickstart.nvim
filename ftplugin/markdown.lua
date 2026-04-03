@@ -1,5 +1,8 @@
 vim.o.textwidth = 80
 
+vim.keymap.set('n', '<up>', '<c-a>', { silent = true })
+vim.keymap.set('n', '<down>', '<c-x>', { silent = true })
+
 local function setupCharter()
   vim.cmd("only")
   vim.cmd("cd ~/repos/work-files")
