@@ -33,4 +33,7 @@ return {
 
   -- easy motion
   'easymotion/vim-easymotion',
+
+  -- vifm integration
+  'vifm/vifm.vim',
 }
