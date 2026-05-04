@@ -36,4 +36,7 @@ return {
 
   -- vifm integration
   'vifm/vifm.vim',
+
+  -- Godot support
+  'habamax/vim-godot'
 }
